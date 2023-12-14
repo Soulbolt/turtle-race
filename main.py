@@ -1,39 +1,22 @@
 from turtle import Turtle, Screen
 
-# Turtles characteristics
-leo = Turtle()
-leo.shape("turtle")
-leo.penup()
-mike = Turtle()
-mike.shape("turtle")
-mike.penup()
-ralph = Turtle()
-ralph.shape("turtle")
-ralph.penup()
-don = Turtle()
-don.shape("turtle")
-don.penup()
-shane = Turtle()
-shane.shape("turtle")
-joan = Turtle()
-joan.shape("turtle")
-colors = ["red", " orange", "yellow", "green", "blue", "purple"]
-
-
-# Assign each turtle a color based on the color list
-
-
-
 screen = Screen()
 screen.setup(width=500, height=400)
 user_bet = screen.textinput(title="Make your bet.", prompt="Which turtle will win the race? Enter a color: ")
+# Assign colors, positions and create a set number of turtles(6) in a dynamic way instead of hard coding.
+colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+y_positions = [-70, -40, -10, 20, 50, 80]
 
-leo.goto(x=-230, y=30)
-leo.pendown()
-mike.goto(x=-230, y=10)
-mike.pendown()
-ralph.goto(x=-230, y=-10)
-ralph.pendown()
-don.goto(x=-230, y=-30)
-don.pendown()
+for turtle_index in range(0, 6):
+    don = Turtle(shape="turtle")
+    don.color(colors[turtle_index])
+    don.penup()
+    don.goto(x=-230, y=y_positions[turtle_index])
+
+
+
+
+
+
+
 screen.exitonclick()
